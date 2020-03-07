@@ -3,10 +3,13 @@ let appCC = new ClickCount;
 const displayClickCount = document.querySelector(".displayCount").innerText = appCC.getClickCount();
 document.querySelector(".displayCompanionCost").innerText = appCC.getCompanionCost();
 document.querySelector(".displayCompanionCount").innerText = appCC.getCompanionCount();
+document.querySelector(".displayCompounderCost").innerText = appCC.getCompounderCost();
+document.querySelector(".displayCompounderCount").innerText = appCC.getCompounderCount();
 
 const makeButtonAddToClickCount = (displayClickCount, appCC) =>{
-    displayClickCount.addEventListener('click', ()=>{
+    displayClickCount.addEventListener("click", ()=>{
         appCC.countClick();
+        displayClickCount();
     });
 }
 
