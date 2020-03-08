@@ -9,9 +9,8 @@ class ClickCount {
         this.compounderCost = 10;
         this.compounderCount = 0;
     }
-    countClick() {
-        this.clickCount++;
-        
+    countClick(){
+      return this.clickCount++;
     }
     getClickCount(){
         return this.clickCount;
