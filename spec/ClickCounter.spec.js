@@ -49,4 +49,31 @@ describe('Clicking Calamity Tests:', () => {
             expect(underTest.getClickCount()).toBe(1);
         });
     });
+    describe('Clicking compounders:', ()=>{
+        it("Compounder counter should have 0 when new.", ()=>{
+            expect(underTest.getCompounderCount()).toBe(0);
+        });
+        it("Compounder should have 1 after 10 clicks.", ()=>{
+            for(let i = 0; i < 10; i++){
+                underTest.countClick();
+            }
+            underTest.buyNewCompounder();
+            expect(underTest.getCompounderCount()).toBe(1);
+        });
+        it("Can't buy compounder when clickCount is less than 10.", ()=>{
+            for (let i = 0; i < 9; i++){
+                underTest.countClick();
+            }
+            underTest.buyNewCompounder();
+            expect(underTest.getCompounderCount()).toBe(0);
+        });
+        it("1 compounder results in clicks worth 1.22 clicks.", ()=>{
+            for(let i = 0; i < 10; i++){
+                underTest.countClick();
+            }
+            underTest.buyNewCompounder();
+            underTest.countClick();
+            expect(underTest.getClickCount()).toBe(1.22);
+        });
+    });
 });

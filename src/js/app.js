@@ -4,6 +4,9 @@ let appCC = new ClickCount;
 
 const clickButton = document.querySelector(".click-button");
 
+const updateClickCount = () =>{
+    document.querySelector(".displayCount").innerText = appCC.getClickCount().toFixed(2);
+}
 const makeButtonAddToClickCount = (appCC) =>{
     clickButton.addEventListener("click", ()=>{
         appCC.countClick();
