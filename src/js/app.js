@@ -40,3 +40,16 @@ document.querySelector(".displayCompanionCost").innerText = appCC.getCompanionCo
 document.querySelector(".displayCompanionCount").innerText = appCC.getCompanionCount();
 document.querySelector(".displayCompounderCost").innerText = appCC.getCompounderCost();
 document.querySelector(".displayCompounderCount").innerText = appCC.getCompounderCount();
+
+let aboutCCCButton = document.getElementById('alert1');
+aboutCCCButton.onclick = function(){
+    alert("Coo Coo Computing Challengers makes a variety of knock-offs of other web apps.")
+}
+let aboutDevButton = document.getElementById('alert2');
+aboutDevButton.onclick = function(){
+    alert("Stuart Maxwell loves to click buttons ad nauseam and wants to share that love with the world.")
+}
+let inspirationButton = document.getElementById('alert3');
+inspirationButton.onclick = function(){
+    alert("https://orteil.dashnet.org/cookieclicker/")
+}
