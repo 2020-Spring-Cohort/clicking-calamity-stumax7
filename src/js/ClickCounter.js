@@ -10,7 +10,8 @@ class ClickCount {
         this.compounderCount = 0;
     }
     countClick(){
-      return this.clickCount++;
+        this.clickCount += this.getCompounderMultiplier();
+        return this.countClick;
     }
     getClickCount(){
         return this.clickCount;
@@ -41,7 +42,11 @@ class ClickCount {
             this.clickCount -= this.compounderCost;
             this.compounderCost *= 1.1;
             this.compounderCost = Math.round(this.compounderCost);
-            this.compounderCount++;
+            this.compounderCount++;   
         }
+   
     }  
+    getCompounderMultiplier(){
+        return 1.2**this.getCompounderCount();
+    }
 }
