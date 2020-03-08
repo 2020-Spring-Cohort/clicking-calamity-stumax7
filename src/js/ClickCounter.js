@@ -45,6 +45,7 @@ class ClickCount {
             this.compounderCost *= 1.1;
             this.compounderCost = Math.round(this.compounderCost);
             this.compounderCount++;   
+            document.querySelector(".displayCount").innerText = appCC.getClickCount().toFixed(2);
         }
    
     }  
