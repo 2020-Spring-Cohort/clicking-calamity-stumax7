@@ -5,6 +5,8 @@ class ClickCount {
         this.companionCount = 0;
         this.autoClick = () => {
             this.clickCount += this.companionCount;
+            document.querySelector(".displayCount").innerText = appCC.getClickCount().toFixed(2);
+
         };
         this.compounderCost = 10;
         this.compounderCount = 0;
