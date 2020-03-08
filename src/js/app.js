@@ -46,7 +46,7 @@ document.querySelector(".displayCompounderCount").innerText = appCC.getCompounde
 
 let aboutCCCButton = document.getElementById('alert1');
 aboutCCCButton.onclick = function(){
-    alert("Coo Coo Computing Challengers makes a variety of knock-offs of other web apps.")
+    alert("Coo Coo Computing Challengers makes a variety of tributes to classic web apps.")
 }
 let aboutDevButton = document.getElementById('alert2');
 aboutDevButton.onclick = function(){
