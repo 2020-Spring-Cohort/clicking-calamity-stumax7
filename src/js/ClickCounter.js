@@ -6,14 +6,13 @@ class ClickCount {
         this.autoClick = () => {
             this.clickCount += (this.companionCount += this.getCompounderMultiplier());
             updateClickCount();
-
         };
         this.compounderCost = 10;
         this.compounderCount = 0;
     }
     countClick(){
         this.clickCount += this.getCompounderMultiplier();
-        return this.countClick;
+        updateClickCount();
     }
     getClickCount(){
         return this.clickCount;
@@ -31,6 +30,7 @@ class ClickCount {
             this.companionCost = Math.round(this.companionCost);
             this.companionCount++;
             let timer = setInterval(this.autoClick, 1000);
+            updateClickCount();
         }
     } 
     getCompounderCost(){

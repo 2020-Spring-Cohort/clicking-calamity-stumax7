@@ -5,8 +5,8 @@ let appCC = new ClickCount;
 const clickButton = document.querySelector(".click-button");
 
 const updateClickCount = () =>{
-    makeButtonAddCompanion(appCC);
     document.querySelector(".displayCount").innerText = appCC.getClickCount().toFixed(2);
+    refreshAllButtons();
 }
 
 // const updateAllCounts = () =>{
@@ -34,7 +34,6 @@ const updateClickCount = () =>{
 const makeButtonAddToClickCount = (appCC) =>{
     clickButton.addEventListener("click", ()=>{
         appCC.countClick();
-        document.querySelector(".displayCount").innerText = appCC.getClickCount().toFixed(2);
     });
 }
 makeButtonAddToClickCount(appCC);
@@ -52,8 +51,19 @@ makeButtonAddCompanion(appCC);
 
 const compounderButton = document.querySelector(".buy-compounder");
 
+const refreshAllButtons = () =>{
+    (appCC.getClickCount() < appCC.getCompanionCost()) ? 
+        companionButton.style.backgroundColor = "black" : 
+        companionButton.style.backgroundColor = "beige";
+    (appCC.getClickCount() < appCC.getCompounderCost()) ? 
+        compounderButton.style.backgroundColor = "black" : 
+        compounderButton.style.backgroundColor = "beige";
+}
+
+
+
 const makeButtonAddCompounder = (appCC) =>{
-    // (appCC.getClickCount() < appCC.getCompounderCost()) ? compounderButton.style.backgroundColor = "black" : compounderButton.style.backgroundColor = "beige";
+    // compounderButton.style.backgroundColor = "beige";
     compounderButton.addEventListener("click", ()=> {
         appCC.buyNewCompounder();
         document.querySelector(".displayCompounderCount").innerText = appCC.getCompounderCount();
