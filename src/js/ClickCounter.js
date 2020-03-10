@@ -4,7 +4,7 @@ class ClickCount {
         this.companionCost = 100;
         this.companionCount = 0;
         this.autoClick = () => {
-            this.clickCount += (this.companionCount += this.getCompounderMultiplier());
+            this.clickCount += (this.companionCount * this.getCompounderMultiplier());
             updateClickCount();
         };
         this.compounderCost = 10;
